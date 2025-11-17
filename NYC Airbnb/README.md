@@ -1,6 +1,3 @@
-You got it. Here is the full content of the Airbnb Market Analysis README in a single code block, ready to be copied and pasted to GitHub:
-
-```markdown
 # 💰 Manhattan Airbnb Market Analysis: Investment Strategy
 
 ## Project Overview
@@ -69,4 +66,3 @@ The final analysis provided a highly refined strategy based on demand and revenu
 * **Change Log:** Documented all assumptions and data cleaning steps (e.g., neighborhood and bedroom cleaning).
 * **Data Analysis:** Pivot tables and supporting bar charts for top 10 neighborhoods and property size popularity.
 * **Final Report:** A recommendation focused solely on the most attractive, high-revenue listings.
-```
