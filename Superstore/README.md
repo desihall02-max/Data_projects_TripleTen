@@ -1,4 +1,4 @@
-# 📊 Superstore Profitability & Operational Review (Tableau)
+# 📈 Superstore Profitability & Operational Review (Tableau)
 
 ## Project Overview
 
@@ -15,7 +15,7 @@ The analysis was structured into three parts, each focused on solving a critical
 **Objective:** Isolate specific dimensions (e.g., product category, region) that are major financial contributors or liabilities.
 
 * **Key Deliverables:**
-    * Visualization identifying the **two biggest profit centers** and the **two biggest loss-makers** across all dimensional pairs (e.g., `Subcategory + Region`).
+    * Visualization identifying the **two biggest profit centers** and the **two biggest loss-makers** across all dimensional pairs (e.g., `Subcategory + Region` or `Shipping Mode + Product ID`).
     * Visualization supporting the recommendation of **which products to stop selling** due to chronic unprofitability.
     * Visualization and recommendation for the **top 3 product subcategories to focus on** and the **3 subcategories to discontinue**.
 
@@ -23,9 +23,10 @@ The analysis was structured into three parts, each focused on solving a critical
 
 **Objective:** Determine the optimal timing and location for advertising based on profit per unit sold, ensuring a high Return on Ad Spend (ROAS).
 
+* **Financial Model:** Based on the assumption that the store should be willing to spend **1/5 of profits** on advertising for this exercise.
 * **Key Deliverables:**
     * Visualization identifying the **3 best combinations of State and Month** for advertising, based on average profit per unit.
-    * A compelling visual argument and calculation for the maximum amount the store should be willing to pay for advertising in those specific windows, based on the principle of spending **1/5 of anticipated profits**.
+    * A compelling visual argument detailing the maximum budget the store would be willing to allocate for advertising in those specific high-return windows.
 
 ### Part 3: Return Rate Analysis & Operational Review
 
@@ -35,7 +36,7 @@ The analysis was structured into three parts, each focused on solving a critical
 * **Key Deliverables:**
     * Visualization identifying the individual **products with the highest return rates**.
     * Visualization identifying the individual **customers with the highest return rates**.
-    * A comparative visualization plotting **Average Profit vs. Average Return Rate** across a chosen business dimension (e.g., Shipping Mode) to argue whether the Superstore should continue or discontinue operations within that segment.
+    * A comparative visualization plotting **Average Profit vs. Average Return Rate** across a chosen business dimension (e.g., Shipping Mode) to argue for doing away with or keeping that business segment.
 
 ## 💻 Technical Skills Demonstrated
 
@@ -43,7 +44,6 @@ The analysis was structured into three parts, each focused on solving a critical
 | :--- | :--- |
 | **Tableau Desktop** | Primary tool for data connection, visual design, and analysis. |
 | **Data Joining** | Used a **LEFT JOIN** to merge the `Returns` table with the `Orders` table to capture all transactions, including non-returned items. |
-| **Calculated Fields** | Created the **Return Rate Field** (`IF [Returned] = 'Yes' THEN 1 ELSE 0 END`) for quantitative analysis. |
-| **LOD Expressions (Implicit)** | Utilized aggregation and fixed calculations within visualizations to determine profit/loss centers and average metrics. |
-| **Business Storytelling**| Developed multiple, focused visualizations, where *each chart* served as a self-contained justification for a specific recommendation. |
-| **Financial Modeling** | Applied business logic (1/5th profit advertising budget) directly to visualized data. |
+| **Calculated Fields** | Created the **Return Rate Field** (`IF [Returned] = 'Yes' THEN 1 ELSE 0 END`) for quantitative analysis and average calculations. |
+| **Business Storytelling** | Developed multiple, focused visualizations, where *each chart* served as a self-contained justification for a specific recommendation. |
+| **Financial Modeling** | Applied business rules (ROAS calculation) directly to visualized data. |
