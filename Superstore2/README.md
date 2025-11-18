@@ -1,49 +1,60 @@
-# 📊 Superstore Profitability & Operational Review (Tableau)
+# 📈 Storytelling with Data: Reducing Superstore Returns (Tableau)
 
 ## Project Overview
 
-This project involved acting as a consultant for a struggling "Superstore" to reverse declining profitability and avoid bankruptcy. The core objective was to utilize the provided sales and returns data (`Superstore.xls`) to identify key drivers of profit and loss, optimize product offerings, and determine the most cost-effective advertising strategy.
+This was a capstone project focused on solving the high volume of returned orders at the Superstore. The objective was not only to perform a deep root-cause analysis but also to **design a comprehensive, executive-level data story and monitoring dashboard** specifically for the CEO.
 
-The entire analysis was conducted and presented using **Tableau**, demonstrating the ability to craft compelling, individualized visualizations to support specific business conclusions and recommendations.
+The analysis required expertise in data preparation, advanced visualization techniques, and, critically, the ability to **construct a persuasive narrative** that clearly outlines the problem, its causes, and actionable solutions. All deliverables, including the analysis, dashboard, and story, were developed using **Tableau**.
 
-## 🎯 Business Questions & Visual Arguments
+---
 
-The analysis was structured into three parts, each focused on solving a critical business problem through data visualization:
+## 🔬 Part 1: Root Cause Analysis
 
-### Part 1: Profit & Loss Identification
+The initial phase involved rigorous data preparation and building various visual arguments to uncover the drivers of returned orders.
 
-**Objective:** Isolate specific dimensions (e.g., product category, region) that are major financial contributors or liabilities.
+### Data Preparation:
+* **Data Joining:** Executed a **LEFT JOIN** on the `Orders` and `Returns` tables to ensure all original orders were present for accurate rate calculation.
+* **Metrics Creation:** A calculated field was created to quantify returns (null $\rightarrow$ 0, Yes $\rightarrow$ 1). This field allowed for the calculation of the **Return Rate (Average)** and the **Total Volume of Returns (Sum)**.
 
-* **Key Deliverables:**
-    * Visualization identifying the **two biggest profit centers** and the **two biggest loss-makers** across all dimensional pairs (e.g., `Subcategory + Region`).
-    * Visualization supporting the recommendation of **which products to stop selling** due to chronic unprofitability.
-    * Visualization and recommendation for the **top 3 product subcategories to focus on** and the **3 subcategories to discontinue**.
+### Key Visualizations Developed:
 
-### Part 2: Advertising Strategy Optimization
+1.  **Sales vs. Returns:** Scatterplot to check for correlation between total sales and total returns, aggregated by **Product Subcategory**.
+2.  **Product Risk:** Bar chart showing **Return Rate by Product Category** to highlight high-risk inventory.
+3.  **Customer Behavior:** Bar chart showing Return Rate by Customer, filtered to remove single-order customers to identify **high-frequency returners**.
+4.  **Geographic Concentration:** Map visualization showing **Return Rate by State or City**.
+5.  **Seasonal Effects:** Time series visualization showing **Return Rate by Month or Week**.
+6.  **Composite Factors:** Two different charts analyzing return rate across combinations of multiple factors (e.g., date, geography, shipping mode, and product category).
 
-**Objective:** Determine the optimal timing and location for advertising based on profit per unit sold, ensuring a high Return on Ad Spend (ROAS).
+---
 
-* **Key Deliverables:**
-    * Visualization identifying the **3 best combinations of State and Month** for advertising, based on average profit per unit.
-    * A compelling visual argument and calculation for the maximum amount the store should be willing to pay for advertising in those specific windows, based on the principle of spending **1/5 of anticipated profits**.
+## 🖼️ Part 2: Dashboard Design and Implementation
 
-### Part 3: Return Rate Analysis & Operational Review
+The findings from the root cause analysis were consolidated into a monitoring tool.
 
-**Objective:** Utilize the `Returns` table to identify high-risk products, analyze customer behavior, and evaluate business segments based on profitability versus return rate.
+* **Design & Mock-ups:** Created **low-fidelity, pen-and-paper mock-ups** to plan the dashboard layout and ensure optimal information flow, demonstrating user-centric design principles.
+* **Implementation:** Created the finalized interactive dashboard in Tableau, matching the chosen mock-up template and incorporating necessary filters and titles.
 
-* **Data Preparation:** Created a calculated field to transform the `Returned` status (null/Yes) into a quantifiable metric (0/1) for rate calculation.
-* **Key Deliverables:**
-    * Visualization identifying the individual **products with the highest return rates**.
-    * Visualization identifying the individual **customers with the highest return rates**.
-    * A comparative visualization plotting **Average Profit vs. Average Return Rate** across a chosen business dimension (e.g., Shipping Mode) to argue whether the Superstore should continue or discontinue operations within that segment.
+---
 
-## 💻 Technical Skills Demonstrated
+## 🗣️ Part 3: Storytelling and Presentation
 
-| Tool / Technique | Application in Project |
+This phase focused on creating a full presentation narrative using the Tableau Story feature.
+
+### Story Arc Components:
+
+1.  **Problem Definition:** Defined **how to measure returns** (rate vs. volume vs. cost) and when each metric is most appropriate for business decision-making.
+2.  **Key Root Causes:** A sequence of story points dedicated to presenting the most salient findings from the analysis (e.g., high-risk categories, problematic geographic zones).
+3.  **Dashboard Demonstration:** Provided an explanatory overview of each dashboard component and a **step-by-step demonstration** of how the CEO or operations manager would use filters to diagnose issues in real-time.
+4.  **Actionable Conclusion:** Outlined specific, proposed next steps and actions (e.g., updating quality control for certain product lines, implementing a stricter return policy for identified high-risk customers).
+
+---
+
+## 🚀 Skills & Tools
+
+| Category | Tool / Skill Demonstrated |
 | :--- | :--- |
-| **Tableau Desktop** | Primary tool for data connection, visual design, and analysis. |
-| **Data Joining** | Used a **LEFT JOIN** to merge the `Returns` table with the `Orders` table to capture all transactions, including non-returned items. |
-| **Calculated Fields** | Created the **Return Rate Field** (`IF [Returned] = 'Yes' THEN 1 ELSE 0 END`) for quantitative analysis. |
-| **LOD Expressions (Implicit)** | Utilized aggregation and fixed calculations within visualizations to determine profit/loss centers and average metrics. |
-| **Business Storytelling**| Developed multiple, focused visualizations, where *each chart* served as a self-contained justification for a specific recommendation. |
-| **Financial Modeling** | Applied business logic (1/5th profit advertising budget) directly to visualized data. |
+| **Data Visualization** | **Tableau**, creating multiple customized charts (scatterplots, maps, composite charts). |
+| **Data Preparation** | **LEFT JOIN**, creating robust, analytical calculated fields for rate calculations. |
+| **Business Strategy** | Translating data into actionable strategies for **reducing loss** and **optimizing operations**. |
+| **Communication** | **Building a full Tableau Story** (narrative arc) and delivering a timed presentation to executive stakeholders. |
+| **Design** | Low-fidelity dashboard mock-ups and high-fidelity dashboard implementation. |
